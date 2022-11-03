@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View" />
+
+        <variable
+            name="user"
+            type="com.aajeevika.buyer.model.data_model.UserData" />
+
+        <variable
+            name="rating"
+            type="com.aajeevika.buyer.model.data_model.RattingData" />
+
+        <variable
+            name="address"
+            type="String" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/view_toolbar"
+            app:title="@{ @string/profile }" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/iv_profile"
+                    android:layout_width="132dp"
+                    android:layout_height="132dp"
+                    android:layout_marginTop="20dp"
+                    app:loadProfileImage="@{user.profileImage}" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_horizontal"
+                    android:includeFontPadding="false"
+                    android:textColor="@color/gray_600"
+                    android:textSize="20sp"
+                    app:camelCaseText="@{user.name}"
+                    app:fontFamily="@font/sarabun_semibold" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/rating_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="26dp"
+                    android:background="@drawable/solid_gray_50_r8">
+
+                    <RatingBar
+                        android:id="@+id/ratingBar"
+                        style="@style/Widget.AppCompat.RatingBar.Small"
+                        setRatting="@{rating.ratingAvgStar}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="12dp"
+                        android:numStars="5"
+                        android:progressTint="@color/orange"
+                        android:rating="0"
+                        app:layout_constraintBottom_toTopOf="@+id/textView5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        prefix='@{"("+rating.reviewCount+")"}'
+                        setRatting="@{rating.ratingAvgStar}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:includeFontPadding="false"
+                        android:textColor="@color/gray_600"
+                        android:textSize="12sp"
+                        app:fontFamily="@font/sarabun_semibold"
+                        app:layout_constraintBottom_toBottomOf="@+id/ratingBar"
+                        app:layout_constraintStart_toEndOf="@+id/ratingBar"
+                        app:layout_constraintTop_toTopOf="@+id/ratingBar" />
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        prefix='@{" out of 5"}'
+                        setRatting="@{rating.ratingAvgStar}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginBottom="12dp"
+                        android:includeFontPadding="false"
+                        android:textColor="@color/gray_600"
+                        android:textSize="12sp"
+                        app:fontFamily="@font/sarabun_semibold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/ratingBar" />
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginEnd="4dp"
+                        android:padding="6dp"
+                        android:src="@drawable/ic_round_arrow_forward"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="@color/gray_400"
+                        tools:ignore="ContentDescription" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:gravity="center|top"
+                    android:padding="16dp"
+                    tools:ignore="UseCompoundDrawables">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/call_icon"
+                        app:tint="@color/gray_600"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_weight="1"
+                        android:includeFontPadding="false"
+                        android:text='@{"+91 "+user.mobile}'
+                        android:textColor="@color/gray_600"
+                        android:textSize="18sp"
+                        app:fontFamily="@font/sarabun_semibold" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center|top"
+                    android:padding="16dp"
+                    android:visibility="@{ user.email==null || user.email.empty? View.GONE: View.VISIBLE, default=gone }"
+                    tools:ignore="UseCompoundDrawables">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/email_icon"
+                        app:tint="@color/gray_600"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_weight="1"
+                        android:includeFontPadding="false"
+                        android:text="@{user.email}"
+                        android:textColor="@color/gray_600"
+                        android:textSize="18sp"
+                        app:fontFamily="@font/sarabun_semibold" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center|top"
+                    android:padding="16dp"
+                    android:visibility="@{ address.empty? View.GONE: View.VISIBLE, default=gone }"
+                    tools:ignore="UseCompoundDrawables">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/location_icon"
+                        app:tint="@color/gray_600"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_weight="1"
+                        android:includeFontPadding="false"
+                        android:textColor="@color/gray_600"
+                        android:textSize="18sp"
+                        app:camelCaseText="@{address}"
+                        app:fontFamily="@font/sarabun_semibold" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+
+        <TextView
+            android:id="@+id/edit_btn"
+            style="@style/AajeevikaBuyer.ActiveButton.Solid"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="24dp"
+            android:text="@string/edit" />
+    </LinearLayout>
+</layout>

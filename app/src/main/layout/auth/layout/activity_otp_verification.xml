@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="title"
+            type="String" />
+
+        <variable
+            name="message"
+            type="String" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/view_toolbar"
+            app:title="@{ title }" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center|top"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="24dp"
+                    android:layout_marginTop="6dp"
+                    android:gravity="center"
+                    android:text="@{ message }"
+                    android:textColor="@color/gray_600"
+                    android:textSize="16sp"
+                    tools:text="Enter 4 digit OTP sent to xxx-xxx-xxxx" />
+
+                <com.eternalapes.OTPView
+                    android:id="@+id/input_otp_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="64dp"
+                    android:textColor="@color/gray_600"
+                    android:textColorHint="@color/gray_100"
+                    android:textSize="16sp"
+                    app:fontFamily="@font/sarabun_bold"
+                    app:viewCount="4"
+                    app:viewHeight="50dp"
+                    app:viewSpace="24sp"
+                    app:viewStrokeColor="@color/gray_100"
+                    app:viewStrokeRadius="4dp"
+                    app:viewStrokeWidth="1dp"
+                    app:viewWidth="45dp" />
+
+                <TextView
+                    android:id="@+id/timer_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@{ @string/remaining_d_sec(30) }"
+                    android:textColor="@color/gray_600"
+                    android:textSize="16sp"
+                    app:fontFamily="@font/sarabun_semibold"
+                    tools:text="Remaining: 30 sec" />
+
+                <TextView
+                    android:id="@+id/resend_txt"
+                    app:fontFamily="@font/sarabun_semibold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/resend_otp"
+                    android:textColor="@color/orange"
+                    android:textSize="16sp"
+                    android:visibility="invisible"/>
+
+                <TextView
+                    android:id="@+id/verify_btn"
+                    style="@style/AajeevikaBuyer.ActiveButton.Solid"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="56dp"
+                    android:layout_marginBottom="30dp"
+                    android:text="@string/verify" />
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+</layout>

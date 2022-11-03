@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="change">परिवर्तन करें</string>
+    <string name="location">स्थान</string>
+    <string name="enter_location">अपनी स्थिति दर्ज़ करें</string>
+    <string name="select_delivery_location">वितरण स्थान चुनें</string>
+    <string name="confirm_location_amp_proceed"><![CDATA[स्थान की पुष्टि करें और आगे बढ़ें]]></string>
+    <string name="explore_your_nearby_restaurants_amp_grocery_shops"><![CDATA[अपने आस-पास के रेस्तरां और किराने की दुकानों का अन्वेषण करें।]]></string>
+    <string name="location_detail">स्थान विवरण</string>
+</resources>

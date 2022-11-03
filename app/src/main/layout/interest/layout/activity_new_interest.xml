@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="seller"
+            type="com.aajeevika.buyer.model.data_model.UserData" />
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/view_toolbar"
+            app:title="@{ @string/express_interest }" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="30dp"
+                    app:cardBackgroundColor="@color/green_alpha_10"
+                    app:cardCornerRadius="4dp"
+                    app:cardElevation="0dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="14dp"
+                            android:layout_marginTop="14dp"
+                            android:layout_marginEnd="14dp"
+                            android:includeFontPadding="false"
+                            android:text="@string/seller_details"
+                            android:textColor="@color/green"
+                            android:textSize="20sp"
+                            app:fontFamily="@font/sarabun_bold"
+                            app:layout_constrainedWidth="true" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="14dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="14dp"
+                            android:layout_marginBottom="10dp"
+                            android:includeFontPadding="false"
+                            android:text="@{seller.name}"
+                            android:textColor="@color/gray_600"
+                            android:textSize="18sp"
+                            app:fontFamily="@font/sarabun_bold"
+                            app:layout_constrainedWidth="true" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white_alpha_75">
+
+                            <ImageView
+                                android:id="@+id/call_img"
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:layout_marginStart="12dp"
+                                android:layout_marginTop="12dp"
+                                android:src="@drawable/call_icon"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:ignore="ContentDescription" />
+
+                            <TextView
+                                android:id="@+id/mobile_number_value"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginEnd="8dp"
+                                android:includeFontPadding="false"
+                                android:text='@{"+91"+seller.mobile}'
+                                android:textColor="@color/gray_600"
+                                android:textSize="14sp"
+                                app:fontFamily="@font/sarabun_semibold"
+                                app:layout_constrainedWidth="true"
+                                app:layout_constraintBottom_toBottomOf="@+id/call_img"
+                                app:layout_constraintEnd_toStartOf="@+id/call_now_btn"
+                                app:layout_constraintHorizontal_bias="0.0"
+                                app:layout_constraintStart_toEndOf="@+id/call_img"
+                                app:layout_constraintTop_toTopOf="@+id/call_img" />
+
+                            <TextView
+                                android:id="@+id/call_now_btn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/solid_orange_r4"
+                                android:includeFontPadding="false"
+                                android:paddingHorizontal="8dp"
+                                android:paddingVertical="4dp"
+                                android:text="@string/call_now"
+                                android:textColor="@color/white"
+                                android:textSize="12sp"
+                                app:fontFamily="@font/sarabun_medium"
+                                app:layout_constraintBottom_toBottomOf="@+id/mobile_number_value"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/mobile_number_value" />
+
+                            <ImageView
+                                android:id="@+id/mail_img"
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:layout_marginStart="12dp"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginBottom="12dp"
+                                android:src="@drawable/email_icon"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/call_img"
+                                tools:ignore="ContentDescription" />
+
+                            <TextView
+                                android:id="@+id/mail_value"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginEnd="14dp"
+                                android:includeFontPadding="false"
+                                android:text="@{seller.email}"
+                                android:textColor="@color/gray_600"
+                                android:textSize="14sp"
+                                app:fontFamily="@font/sarabun_semibold"
+                                app:layout_constrainedWidth="true"
+                                app:layout_constraintBottom_toBottomOf="@+id/mail_img"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.0"
+                                app:layout_constraintStart_toEndOf="@+id/mail_img"
+                                app:layout_constraintTop_toTopOf="@+id/mail_img" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/add_products_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="4dp"
+                    android:paddingStart="16dp"
+                    android:paddingTop="10dp"
+                    android:textSize="16sp"
+                    android:drawableStart="@drawable/ic_plus"
+                    android:textStyle="bold"
+                    android:drawablePadding="5dp"
+                    android:textColor="@color/orange"
+                    android:paddingEnd="16dp"
+                    android:paddingBottom="10dp"
+                    android:text="@string/add_products" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_View"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:nestedScrollingEnabled="false"
+                    android:orientation="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="10dp"
+                    android:includeFontPadding="false"
+                    android:text="@string/your_message"
+                    android:textColor="@color/gray_600"
+                    android:textSize="14sp"
+                    app:fontFamily="@font/sarabun_medium" />
+
+                <EditText
+                    android:id="@+id/et_message"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="40dp"
+                    android:background="@drawable/outline_w1_gray_100_r4"
+                    android:gravity="top|start"
+                    android:hint="@string/your_message_required"
+                    android:includeFontPadding="false"
+                    android:inputType="textMultiLine"
+                    android:lines="6"
+                    android:padding="16dp"
+                    android:textColor="@color/gray_300"
+                    android:textSize="14sp"
+                    tools:ignore="Autofill" />
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <TextView
+            android:id="@+id/tvDone"
+            style="@style/AajeevikaBuyer.ActiveButton.Solid"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="24dp"
+            android:text="@string/submit" />
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="java.util.ArrayList" />
+
+        <variable
+            name="list"
+            type="ArrayList&lt;String&gt;" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/view_toolbar"
+            app:title="@{ @string/grievance }" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/AajeevikaBuyer.TextInputLayout"
+                        android:layout_marginHorizontal="32dp"
+                        android:layout_marginTop="20dp"
+                        android:hint="@string/select_issue_required">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/input_issue"
+                            style="@style/AajeevikaBuyer.EditText"
+                            android:cursorVisible="false"
+                            android:drawableEnd="@drawable/dropdown_icon"
+                            android:focusable="false"
+                            android:importantForAutofill="no"
+                            android:inputType="textNoSuggestions"
+                            android:paddingEnd="10dp"
+                            app:dropDownMenu="@{ list }"
+                            tools:ignore="Autofill,LabelFor,RtlSymmetry" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/AajeevikaBuyer.TextInputLayout"
+                        android:layout_marginHorizontal="32dp"
+                        android:layout_marginTop="20dp"
+                        android:hint="@string/explain_your_concern_required">
+
+                        <EditText
+                            android:id="@+id/input_message"
+                            style="@style/AajeevikaBuyer.EditText"
+                            android:layout_height="190dp"
+                            android:gravity="top|start"
+                            android:inputType="textMultiLine"
+                            android:singleLine="false"
+                            tools:ignore="Autofill,LabelFor,RtlSymmetry" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/submit_btn"
+                    style="@style/AajeevikaBuyer.ActiveButton.Solid"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="24dp"
+                    android:text="@string/submit" />
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+</layout>

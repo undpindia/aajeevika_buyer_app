@@ -1,0 +1,89 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.aajeevika.buyer.location.viewModel.LocationViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/topLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <include
+                android:id="@+id/toolbarLayout"
+                layout="@layout/toolbar_common"
+                app:title="@{@string/location}" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_48dp"
+                android:layout_margin="@dimen/_16dp"
+                android:background="@drawable/bg_radius_white_8dp"
+                android:elevation="@dimen/_8dp">
+
+                <EditText
+                    android:id="@+id/etSearchLocation"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:drawablePadding="@dimen/_8dp"
+                    android:gravity="center_vertical"
+                    android:hint="@string/enter_location"
+                    android:paddingStart="@dimen/_8dp"
+                    android:paddingEnd="@dimen/_16dp"
+                    android:singleLine="true"
+                    android:textColor="#333333"
+                    android:textColorHint="#666666"
+                    android:textSize="@dimen/_14sp"
+                    app:drawableLeftCompat="@drawable/ic_loc_icon" />
+
+                <ImageView
+                    android:id="@+id/currentLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:padding="@dimen/_8dp"
+                    app:srcCompat="@drawable/ic_my_location"
+                    app:tint="#005c00"
+                    tool:ignore="ContentDescription" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvAddress"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/topLayout" />
+
+        <TextView
+            android:id="@+id/noDataLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_32dp"
+            android:layout_marginTop="@dimen/_16dp"
+            android:layout_marginEnd="@dimen/_32dp"
+            android:gravity="center"
+            android:text="@string/search"
+            android:textSize="@dimen/_18sp"
+            app:drawableTopCompat="@drawable/ic_location_empty"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/topLayout" />
+
+        <include layout="@layout/dialog_progress"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

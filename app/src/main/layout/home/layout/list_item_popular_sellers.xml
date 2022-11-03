@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="seller"
+            type="com.aajeevika.buyer.model.data_model.ProductBasicData" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center|top"
+        android:orientation="vertical">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:loadProfileImage="@{seller.profileImage}" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:ellipsize="end"
+            android:gravity="center|top"
+            android:includeFontPadding="false"
+            android:lines="2"
+            android:maxLines="2"
+            android:text="@{seller.name}"
+            android:textColor="@color/gray_600"
+            android:textSize="12sp"
+            app:fontFamily="@font/sarabun_medium"
+            app:layout_constrainedWidth="true" />
+
+        <RatingBar
+            style="@style/Widget.AppCompat.RatingBar.Small"
+            setRatting="@{seller.rating.ratingAvgStar}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:numStars="5"
+            android:progressTint="@color/orange"
+            android:rating="4" />
+
+        <TextView
+            prefix='@{"("+seller.rating.reviewCount+")"}'
+            setRatting="@{seller.rating.ratingAvgStar}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:includeFontPadding="false"
+            android:textColor="@color/gray_600"
+            android:textSize="12sp"
+            app:fontFamily="@font/sarabun_semibold"
+            app:layout_constrainedWidth="true" />
+
+    </LinearLayout>
+</layout>

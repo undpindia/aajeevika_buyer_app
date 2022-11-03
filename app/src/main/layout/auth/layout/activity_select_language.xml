@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.aajeevika.buyer.utility.app_enum.LanguageType" />
+
+        <import type="android.view.View" />
+
+        <variable
+            name="selectedLanguage"
+            type="LanguageType" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="0dp"
+            android:layout_height="148dp"
+            android:layout_marginHorizontal="64dp"
+            android:layout_marginTop="28dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/aajeevika_group_logo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:includeFontPadding="false"
+            android:text="@string/choose_language"
+            android:textColor="@color/gray_600"
+            android:textSize="24sp"
+            app:fontFamily="@font/sarabun_extrabold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:includeFontPadding="false"
+            android:text="@string/please_select_preferred_language"
+            android:textColor="@color/gray_400"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <LinearLayout
+            android:id="@+id/english_btn"
+            android:layout_width="216dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="50dp"
+            android:background="@{selectedLanguage==LanguageType.ENGLISH? @drawable/solid_green_r8: @drawable/solid_gray_50_r8, default=@drawable/solid_green_r8}"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingHorizontal="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:includeFontPadding="false"
+                android:text="@string/select_lang_english"
+                android:textColor="@{selectedLanguage==LanguageType.ENGLISH? @color/white: @color/gray_600, default=@color/white}"
+                android:textSize="24sp"
+                app:fontFamily="@font/sarabun_semibold" />
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="8dp"
+                android:src="@drawable/ic_baseline_check_circle"
+                android:visibility="@{selectedLanguage==LanguageType.ENGLISH? View.VISIBLE: View.GONE, default=visible}"
+                app:tint="@color/white"
+                tools:ignore="ContentDescription" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/hindi_btn"
+            android:layout_width="216dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="28dp"
+            android:background="@{selectedLanguage==LanguageType.HINDI? @drawable/solid_green_r8: @drawable/solid_gray_50_r8, default=@drawable/solid_gray_50_r8}"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingHorizontal="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/english_btn">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:includeFontPadding="false"
+                android:text="@string/select_lang_hindi"
+                android:textColor="@{selectedLanguage==LanguageType.HINDI? @color/white: @color/gray_600, default=@color/gray_600}"
+                android:textSize="24sp"
+                app:fontFamily="@font/sarabun_semibold" />
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="8dp"
+                android:src="@drawable/ic_baseline_check_circle"
+                android:visibility="@{selectedLanguage==LanguageType.HINDI? View.VISIBLE: View.GONE, default=invisible}"
+                app:tint="@color/white"
+                tools:ignore="ContentDescription" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/proceed_btn"
+            style="@style/AajeevikaBuyer.ActiveButton.Solid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="40dp"
+            android:text="@string/proceed"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/hindi_btn"
+            app:layout_constraintVertical_bias="1.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

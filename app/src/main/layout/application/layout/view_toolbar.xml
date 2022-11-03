@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View" />
+
+        <variable
+            name="title"
+            type="String" />
+
+        <variable
+            name="enableEditButton"
+            type="boolean" />
+
+        <variable
+            name="enableLikeButton"
+            type="boolean" />
+
+        <variable
+            name="isLiked"
+            type="boolean" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/back_btn"
+            android:layout_width="54dp"
+            android:layout_height="54dp"
+            android:paddingHorizontal="16dp"
+            android:src="@drawable/back_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:text="@{ title }"
+            android:textColor="@color/gray_600"
+            android:textSize="26sp"
+            android:singleLine="true"
+            android:ellipsize="marquee"
+            android:gravity="center"
+            android:layout_marginHorizontal="56dp"
+            app:fontFamily="@font/sarabun_extrabold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/edit_btn"
+            android:layout_width="54dp"
+            android:layout_height="54dp"
+            android:paddingHorizontal="16dp"
+            android:src="@drawable/edit_icon"
+            android:visibility="@{enableEditButton? View.VISIBLE: View.GONE, default=gone}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:id="@+id/like_btn"
+            android:layout_width="54dp"
+            android:layout_height="54dp"
+            android:paddingHorizontal="16dp"
+            android:src="@{isLiked? @drawable/ic_round_favorite_active: @drawable/ic_round_favorite_inactive, default=@drawable/ic_round_favorite_inactive}"
+            android:visibility="@{enableLikeButton? View.VISIBLE: View.GONE, default=gone}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

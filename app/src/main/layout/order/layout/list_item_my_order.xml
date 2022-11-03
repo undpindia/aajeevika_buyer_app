@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="order"
+            type="com.aajeevika.buyer.model.data_model.OrderData" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/solid_green_op10_r4">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/product_img_container"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/product_img"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                app:loadProfileImage="@{order.seller.profileImage}"
+                tools:ignore="ContentDescription" />
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/buyer_name_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:includeFontPadding="false"
+            android:text="@string/seller_name"
+            android:textColor="@color/gray_600"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toTopOf="@+id/buyer_name_value"
+            app:layout_constraintStart_toEndOf="@+id/product_img_container"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/buyer_name_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="16dp"
+            android:ellipsize="end"
+            android:includeFontPadding="false"
+            android:lines="1"
+            app:camelCaseText="@{order.seller.organization_name}"
+            android:textColor="@color/gray_600"
+            android:textSize="14sp"
+            app:fontFamily="@font/sarabun_bold"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintBottom_toTopOf="@+id/interest_id_txt"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/product_img_container"
+            app:layout_constraintTop_toBottomOf="@+id/buyer_name_txt" />
+
+        <TextView
+            android:id="@+id/date_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/solid_white_r24"
+            android:ellipsize="end"
+            android:includeFontPadding="false"
+            android:lines="1"
+            android:paddingHorizontal="6dp"
+            android:paddingVertical="4dp"
+            setDate="@{order.updated_at}"
+            android:textColor="@color/gray_600"
+            android:textSize="12sp"
+            app:fontFamily="@font/sarabun_bold"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintBottom_toTopOf="@+id/buyer_name_value"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/interest_id_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="8dp"
+            android:includeFontPadding="false"
+            android:text="@string/order_id"
+            android:textColor="@color/gray_600"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/product_img_container"
+            app:layout_constraintTop_toBottomOf="@+id/buyer_name_value" />
+
+        <TextView
+            android:id="@+id/interest_id_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:ellipsize="end"
+            android:includeFontPadding="false"
+            android:lines="1"
+            android:text="@{order.order_id_d}"
+            android:textColor="@color/gray_600"
+            android:textSize="14sp"
+            app:fontFamily="@font/sarabun_bold"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintBottom_toBottomOf="@+id/interest_id_txt"
+            app:layout_constraintStart_toEndOf="@+id/interest_id_txt"
+            app:layout_constraintTop_toTopOf="@+id/interest_id_txt" />
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="14dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/solid_green_r24"
+            android:padding="6dp"
+            android:src="@drawable/ic_round_arrow_forward"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:tint="@color/white" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

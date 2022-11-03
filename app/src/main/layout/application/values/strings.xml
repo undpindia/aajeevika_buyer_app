@@ -1,0 +1,228 @@
+<resources>
+    <string name="select_lang_english" translatable="false">English</string>
+    <string name="select_lang_hindi" translatable="false">हिन्दी</string>
+    <string name="english_a" translatable="false">A</string>
+    <string name="hindi_a" translatable="false">अ</string>
+
+    <string name="selected_language">English</string>
+
+    <string name="email_id_required">Email Id *</string>
+    <string name="password_required">Password *</string>
+    <string name="your_name_required">Your Name *</string>
+    <string name="mobile_no_required">Mobile No. *</string>
+    <string name="confirm_password_required">Confirm Password *</string>
+
+    <string name="no_internet_connection">No Internet Connection. Please Try Again!</string>
+    <string name="ok">OK</string>
+    <string name="loading">Loading…</string>
+    <string name="logout_confirmation_message">Are you sure you want to Logout?</string>
+    <string name="cancel">Cancel</string>
+    <string name="yes_logout">Yes, Logout</string>
+    <string name="register">Register</string>
+    <string name="email_id">Email Id</string>
+    <string name="mobile_no">Mobile No.</string>
+    <string name="password">Password</string>
+    <string name="forgot_password_">Forgot Password?</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="register_agreement"><![CDATA[Check to agree with our Terms & Conditions and Privacy Policy.]]></string>
+    <string name="terms_and_conditions"><![CDATA[Terms & Conditions]]></string>
+    <string name="privacy_policy"><![CDATA[Privacy Policy]]></string>
+    <string name="sign_up">Sign Up</string>
+    <string name="already_have_an_account">Already have an account ?</string>
+    <string name="click_to_login">Click to Login</string>
+    <string name="verify_otp">Verify OTP</string>
+    <string name="verify_email">Verify E-mail</string>
+    <string name="verify_contact">Verify Contact</string>
+    <string name="remaining_d_sec">Remaining: %d sec</string>
+    <string name="verify">Verify</string>
+    <string name="enter_4_digit_otp_sent_to_s">Enter 4 digit OTP sent to %s</string>
+    <string name="login">Login</string>
+    <string name="email_phone_number">Email/Phone Number</string>
+    <string name="email_phone_number_required">Email/Phone Number *</string>
+    <string name="click_to_register">Click to Register</string>
+    <string name="don_t_have_an_account">Don\'t have an account?</string>
+    <string name="view_all">View All</string>
+    <string name="my_interest">My Interest</string>
+    <string name="faq">FAQ</string>
+    <string name="logout">Logout</string>
+    <string name="notifications">Notifications</string>
+    <string name="faqs">FAQs</string>
+    <string name="rating_and_reviews">Rating and Reviews</string>
+    <string name="submit">Submit</string>
+    <string name="my_interests">My Interests</string>
+    <string name="interests_detail">Interests Detail</string>
+    <string name="order_detail">Order Detail</string>
+    <string name="call_now">Call Now</string>
+    <string name="your_message">Your Message</string>
+    <string name="your_message_required">Your Message *</string>
+    <string name="feedback_for_buyer">Feedback for buyer</string>
+    <string name="available">Available</string>
+    <string name="certifications">Certifications</string>
+    <string name="price">Price</string>
+    <string name="price_">Price:</string>
+    <string name="product_detail">Product Detail</string>
+    <string name="kg">Kg</string>
+    <string name="profile">Profile</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="save_changes">Save Changes</string>
+    <string name="address">Address</string>
+    <string name="change_email">Change Email</string>
+    <string name="change_mobile">Change Mobile</string>
+    <string name="change_address">Change Address</string>
+
+    <string name="enter_new_mobile_number">Enter new mobile number to get otp to update mobile number</string>
+    <string name="enter_new_email">Enter new Email to get otp to update Email</string>
+
+    <string name="qty">Qty</string>
+    <string name="qty_">Qty:</string>
+    <string name="add_products">Add Products</string>
+    <string name="done">Done</string>
+    <string name="order_id">Order id:</string>
+    <string name="my_order">My Order</string>
+    <string name="pending">Pending</string>
+    <string name="completed">Completed</string>
+    <string name="your_name">Your Name</string>
+    <string name="send_otp">Send OTP</string>
+    <string name="support">Support</string>
+    <string name="seller_name">Seller Name</string>
+    <string name="seller_details">Seller Details</string>
+    <string name="popular_sellers">Popular Sellers</string>
+    <string name="recently_added">Recently Added</string>
+    <string name="seller_profile">Seller Profile</string>
+    <string name="express_interest">Express Interest</string>
+    <string name="certificates">Certificates</string>
+
+    <string name="enter_mobile_or_email">Enter Mobile No/Email Id</string>
+    <string name="invalid_mobile_or_email">Invalid Mobile No/Email Id</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="password_length_error">Password must have at least 8 characters</string>
+    <string name="enter_new_password">Enter new password</string>
+    <string name="password_doesnt_match">Password doesn\'t match</string>
+    <string name="enter_valid_otp">Enter valid OTP</string>
+    <string name="enter_name">Enter Name</string>
+    <string name="enter_email_id">Enter Email Id</string>
+    <string name="invalid_email_id">Invalid Email Id</string>
+    <string name="enter_mobile_no">Enter Mobile No</string>
+    <string name="invalid_mobile_no">Invalid Mobile No</string>
+    <string name="enter_country">Enter Country</string>
+    <string name="enter_state">Enter State</string>
+    <string name="enter_city">Enter District</string>
+    <string name="accept_promotional_email">Agree to promotional emails</string>
+    <string name="accept_terms_and_conditions"><![CDATA[Accept Terms & Conditions.]]></string>
+    <string name="login_to_view_profile">Login to view profile.</string>
+    <string name="load_more">Load More</string>
+    <string name="more_products">More Products</string>
+    <string name="products">Products</string>
+    <string name="enter_new_mobile_no">Enter new mobile no.</string>
+    <string name="mobile_no_updated_successfully">Mobile number updated successfully.</string>
+    <string name="fill_all_the_fields">Fill all required the fields</string>
+    <string name="accept_terms_conditions_and_privacy_policy"><![CDATA[Accept terms & conditions and privacy policy to continue]]></string>
+    <string name="password_changed_successfully">Password changed successfully</string>
+    <string name="price_format">₹%s</string>
+    <string name="quantity_format">%skg</string>
+    <string name="price_per_key_format">₹100/kg</string>
+    <string name="verified">Verified</string>
+    <string name="unverified">Unverified</string>
+    <string name="enter_valid_mobile_number">Enter a valid mobile number</string>
+
+    <string name="forgot_password_message">Enter registered Mobile number to get otp to reset your password</string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="reset_password">Reset Password</string>
+
+    <string name="pdx_id">Pdx ID</string>
+    <string name="ven_id">Ven ID</string>
+
+    <string name="profile_update_sucessfully">Profile updated successfully</string>
+
+    <string name="how_to_add_photo">How would you like to add an photo?</string>
+    <string name="camera">Camera</string>
+    <string name="gallery">Gallery</string>
+    <string name="storage_permission_gallery">Storage permission required to upload image from gallery.</string>
+    <string name="camera_permission_required">Camera Permission Required</string>
+
+    <string name="address_line_one">Address line</string>
+    <string name="address_line_two">Address line 2</string>
+    <string name="pin">Pin</string>
+    <string name="country">Country</string>
+    <string name="state">State</string>
+    <string name="city">District</string>
+    <string name="address_line_one_required">Address line *</string>
+    <string name="address_line_two_required">Address line 2 *</string>
+    <string name="pin_required">Pin *</string>
+    <string name="country_required">Country *</string>
+    <string name="state_required">State *</string>
+    <string name="city_required">District *</string>
+    <string name="edit_address">Edit Address</string>
+    <string name="edit">Edit</string>
+    <string name="address_updated_successfully">Address updated successfully</string>
+    <string name="confirm_location">Confirm Location</string>
+    <string name="selectLocation">Select Location</string>
+    <string name="feedback_for_seller">Feedback for Seller</string>
+    <string name="please_login_to_continue">Please login to continue</string>
+    <string name="login_now">Login now</string>
+    <string name="width">Width</string>
+    <string name="height">Height</string>
+    <string name="length">Length</string>
+    <string name="volume">Volume</string>
+    <string name="weight">Weight</string>
+    <string name="search_products">Search Products</string>
+    <string name="search">Search</string>
+
+    <string name="select_image">Select Image</string>
+    <string name="capture_image">Capture Image</string>
+    <string name="unable_to_make_call">Unable to make call</string>
+    <string name="seller_not_found">Seller not found</string>
+    <string name="order_not_found">Order not found</string>
+    <string name="enter_valid_email_id">Enter valid email id</string>
+    <string name="add_at_least_one_product">Add at least one product</string>
+    <string name="enter_your_message">Enter your message</string>
+    <string name="rating_cant_be_zero">Rating can\'t be 0</string>
+    <string name="go_to_setting">Go To Setting</string>
+    <string name="permission_required">Permission Required</string>
+    <string name="permission_required_message">Location permission is required for this feature. It can be enabled under phone settings > Apps > Aajeevika Buyer > Permissions</string>
+    <string name="save">Save</string>
+    <string name="resend_otp">Resend OTP</string>
+    <string name="interest_id">Interest id:</string>
+    <string name="total_amount">Total Amount</string>
+
+    <string name="choose_language">Choose Language</string>
+    <string name="please_select_preferred_language">Please select preferred language</string>
+    <string name="proceed">Proceed</string>
+    <string name="english">English</string>
+    <string name="hindi">Hindi</string>
+    <string name="my_profile">My Profile</string>
+    <string name="favourite_seller">Favourite Seller</string>
+    <string name="version_s">Version %s</string>
+    <string name="available_">Available:</string>
+    <string name="call">Call</string>
+    <string name="favourite_added_successfully">Favourite added successfully</string>
+    <string name="favourite_removed_successfully">Favourite removed successfully</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="otp_s">OTP: %s</string>
+
+    <string name="about_us">About Us</string>
+    <string name="about_us_message">The Uttarakhand State Rural Livelihood Mission (USRLM) Aajeevika App has been developed by United Nations Development Programme (UNDP) to provide an online platform for the information dissemination of Government Schemes and programmes which can lead to resource mobilization for livelihoods promotion of rural women in the State. The Uttarakhand Aajeevika App was launched by Hon’ble Chief Minister of Uttarakhand on 18th Jan 2021. The app will also provide essential information on NRLM, feedback and grievances by SHG women, best practices for livelihoods promotions etc. A second edition of the application, Ajeevika 2.0 which is a marketplace platform developed for integrating marketing linkages for SHG products and to support in long-term recovery of rural economy through SHGs.</string>
+
+    <string name="grievance">Grievance</string>
+    <string name="raise_tickets">Raise Ticket</string>
+    <string name="select_issue">Select Issue</string>
+    <string name="explain_your_concern">Explain your concern here.</string>
+    <string name="select_issue_required">Select Issue *</string>
+    <string name="explain_your_concern_required">Explain your concern here. *</string>
+    <string name="survey">Survey</string>
+    <string name="ticket_no">Ticket no:</string>
+    <string name="created_on">Created on:</string>
+    <string name="open">Open</string>
+    <string name="closed">Closed</string>
+    <string name="type_message_here">Type message here</string>
+    <string name="you">You</string>
+    <string name="aajeevika">Aajeevika</string>
+    <string name="published_on">Published on:</string>
+    <string name="expire_on">Expire on:</string>
+    <string name="take_a_survey">Take a Survey</string>
+    <string name="expired">Expired</string>
+    <string name="survey_expired">Survey Expired</string>
+    <string name="rejected">Rejected</string>
+    <string name="ticket_closed_message">This ticket has been marked closed. In case if your issue is not resolved, open a new ticket.</string>
+
+</resources>
